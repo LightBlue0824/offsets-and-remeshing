@@ -169,6 +169,13 @@ class Octree_wrapper {
 
             const std::vector<Face_descriptor> current_prims = voxel_prims_[current_lex];
 
+            // yyr ÐÞ¸Ä
+            // Check if we've reached a new max depth
+            if (current.depth() == octree_.depth()) {
+                // Update the side length map
+                octree_.m_side_per_depth.push_back(*(octree_.m_side_per_depth.end() - 1) / 2);
+            }
+
             // split
             octree_.split( current );
 
@@ -243,6 +250,14 @@ class Octree_wrapper {
             }
 
             const std::vector<Face_descriptor> current_prims = voxel_prims_[current_lex];
+
+            // yyr ÐÞ¸Ä
+            // Check if we've reached a new max depth
+            if (current.depth() == octree_.depth()) {
+                // Update the side length map
+                octree_.m_side_per_depth.push_back(*(octree_.m_side_per_depth.end() - 1) / 2);
+            }
+
 
             // split
             octree_.split( current );
@@ -333,6 +348,13 @@ class Octree_wrapper {
 
             const std::size_t current_lex                    = node_to_lex_index( current );
             const std::vector<Face_descriptor> current_prims = voxel_prims_[current_lex];
+
+            // yyr ÐÞ¸Ä
+            // Check if we've reached a new max depth
+            if (current.depth() == octree_.depth()) {
+                // Update the side length map
+                octree_.m_side_per_depth.push_back(*(octree_.m_side_per_depth.end() - 1) / 2);
+            }
 
             // split
             octree_.split( current );

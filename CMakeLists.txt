@@ -31,6 +31,14 @@ find_package(glog CONFIG REQUIRED)
 # OpenMP
 find_package(OpenMP)
 # CLI
+#find_package(CLI11)
+#include_directories("D:/workspace/3rdparty_library/CLI11_hpp")
+#add_subdirectory(CLI11)
+if(NOT DEFINED CLI11_DIR)
+#set (CLI11_DIR "C:/Program Files (x86)/CLI11" CACHE STRING "CLI11 git repository")
+set (CLI11_DIR "${CMAKE_SOURCE_DIR}/3rdparty/CLI11" CACHE STRING "CLI11 git repository")
+endif()
+include_directories(${CLI11_DIR}/include)
 find_package(CLI11)
 
 include(CGAL_Eigen3_support)

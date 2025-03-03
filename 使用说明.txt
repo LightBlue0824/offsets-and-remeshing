@@ -1,0 +1,3 @@
+PowerShell
+./build/src/voxeloffset_cli/Debug/Voxeloffset_cli.exe -p "data/bunny.off" -o "bunny_out.off" --debugout "debug_folder" -d --d1 10 --d2 12 -r 1 -n -q -j 0.1
+./build/src/voxeloffset_cli/Release/Voxeloffset_cli.exe -p "data/StanfordBunny.off" -o "StanfordBunny_out.off" --debugout "debug_folder" -d --d1 10 --d2 12 -r 1 -n -q -j 0.1
